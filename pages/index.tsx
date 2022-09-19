@@ -23,11 +23,13 @@ export default function Home({ product }: {
 
   }[]
 }) {
-  const [datosProducts, setDatosProducts] = useState(product)
-  const [productLimit, setProductLimit] = useState([...product].splice(0, pages))
-  const [currentPage, setCurrentPage] = useState(0)
+  //paginado la logica esta desde la linia 26 al 53 
+  const [datosProducts, setDatosProducts] = useState(product)// Almacena los productos
+  const [productLimit, setProductLimit] = useState([...product].splice(0, pages))//Definimos las paginas a mostrar
+  const [currentPage, setCurrentPage] = useState(0) //Contador
 
- console.log(product);
+
+/*Pagina siguente*/
   const nextPage = () => {
     const totalElemeProdu: any = datosProducts.length;
     const nextPage: number = currentPage + 1;
@@ -41,14 +43,14 @@ export default function Home({ product }: {
     setCurrentPage(nextPage);
   }
 
-
+/*Pagina anterios*/
   const previousPage = () => {
     const prevPage: number = currentPage - 1
     if (prevPage < 0) return;
     const firstIndex: number = prevPage * pages;
     setProductLimit([...datosProducts].splice(firstIndex, pages))
     setCurrentPage(prevPage);
-  }
+  } //.fin de la logica de paginado
 
   return (
     <>
@@ -70,7 +72,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {  //
 
   return {
     props: {
-      product: products //aqui estamos pasando todos los prodcutos a product jdjdj
+      product: products //aqui estamos pasando todos los produtos a product :D
 
     }
   }
