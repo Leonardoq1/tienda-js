@@ -17,7 +17,7 @@ export const TestProduct = ({ products, currentPage, previousPage, nextPage }) =
                             <a key={produ.id} href="#" className="group  ">
                             <div className=" aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
                                 <img
-                                    src={produ.image}
+                                    src={'https://dr282zn36sxxg.cloudfront.net/datastreams/f-d%3A24d1b12cf462c403b54b13d0c22fcdd96e4063941e9f1f27934708a8%2BIMAGE_TINY%2BIMAGE_TINY.1'}
                                     alt={'Img product'}
                                     className="h-full w-full object-cover object-center group-hover:opacity-50 "
                                 />
